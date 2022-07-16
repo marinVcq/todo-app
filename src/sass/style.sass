@@ -7,7 +7,7 @@
 	margin: 0
 	padding: 0
 	font-family: "Josefin Sans"
-	font-size: 1.6rem
+	font-size: 1.8rem
 	@include flexbox(column, flex-start, center)
 
 .header
@@ -46,20 +46,30 @@
 
 	input
 		font-family: 'Josefin Sans'
-		height: 100%
 		border: none
+		font-size: 1.3rem
 		flex-grow: 1
 
 		&:focus
 			outline: none
 
 .round-btn
+	@include flexbox(row,center,center)
 	border-radius: 50%
 	@include width-height(2rem,2rem)
-	background: transparent
 	border: 0.1rem solid black
 	margin-right: 1.2rem
 	cursor: pointer
+	background: transparent
+
+.completed
+	background: linear-gradient(135deg, hsl(192, 100%, 67%),hsl(280, 87%, 65%))
+
+	.icon-check
+		@include width-height(1rem,1rem)
+		background-image: url('../assets/images/icon-check.svg')
+		background-position: center
+		background-repeat: no-repeat
 
 .image-background
 	@include set-position(absolute,0,0)
@@ -81,9 +91,16 @@
 	@include width-height(100%, 5rem)
 	@include flexbox(row, space-between, center)
 	padding: 0 2rem 0 2rem
-	border-top: 1px solid grey
+	border-top: 0.1rem solid hsl(233, 11%, 84%)
+
+	.itemsLeft
+		color: hsl(236, 9%, 61%)
+		font-size: 1.3rem
 
 	button
+		color: hsl(236, 9%, 61%)
+		font-size: 1.3rem
+		font-family: 'Josefin Sans'
 		border: none
 		background: transparent
 
@@ -91,20 +108,28 @@
 	width: 100%
 
 .todoItem
-	@include flexbox(row, space-between, center)
+	@include flexbox(row, flex-start, center)
 	width: 100%
 	min-height: 5rem
 	padding: 0 2rem 0 2rem
-	border-bottom: 0.1rem solid grey
-
+	border-bottom: 0.1rem solid hsl(233, 11%, 84%)
 	p 
-		width: 24.1rem
-		padding-right: 1rem
+		max-width: 24.1rem
 		text-align: start
-		font-weight: 400
+		font-size: 1.3rem
+		font-weight: regular
 		overflow-wrap: break-word
-			
+
+		&:after
+			content: ""
+			@include set-position(absolute,0,0)
+			@include width-height(100%,50%)
+			border-bottom: 0.1rem solid hsl(233, 11%, 84%)
+
 	.remove-todo-btn
+		@include set-position(absolute, 50%,100)
+		transform: translateY(-50%)
+		margin-right: 2rem
 		@include width-height(1.4rem, 1.4rem)
 		background-image: url('../assets/images/icon-cross.svg')
 		background-position: center

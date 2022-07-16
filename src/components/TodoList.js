@@ -1,18 +1,11 @@
 import React from 'react';
+import Todo from './Todo';
 
-function TodoList({todos}) {
+function TodoList({todos, handleCompleted}) {
 	return (
       <ol className="todoList">
         {todos.map(todo => {
-          return (
-          	<li className="todoItem" key={todo.id}>
-          		
-          		<button className="round-btn"></button>
-          		
-          		<p>{todo.content}</p>
-
-          		<button className="remove-todo-btn"></button>
-          	</li>)
+          return <Todo todo={todo} handleCompleted={handleCompleted} key={todo.id}/>
         })}
       </ol>
 	);

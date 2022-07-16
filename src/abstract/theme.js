@@ -5,8 +5,10 @@ export const light = {
 	mainBackground: COLORS.veryLightGray,
 	todoContainerBackground: COLORS.veryLightGrayishBlue,
 	todoContainerShadow: COLORS.lightGrayishBlue,
-	textSoft: COLORS.darkGrayishBlue,
+	textSoft: COLORS.veryLightGrayishBlue,
 	text: COLORS.veryDarkGrayishBlue,
+	textCompleted: COLORS.lightGrayishBlue1,
+	buttonCompleted: COLORS.veryLightGrayishBlue
 };
 
 export const dark = {

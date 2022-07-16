@@ -11,7 +11,7 @@ import TodoList from './TodoList';
 
 
 
-function Todos({todos, addTodo}) {
+function Todos({todos, addTodo, setCompleted}) {
 
   /* State */
   const [todo, setTodo] = useState('');
@@ -39,6 +39,12 @@ function Todos({todos, addTodo}) {
     setTodo('');
   }
 
+  const handleCompleted = (id,e) => {
+    e.preventDefault();
+    console.log('set completed !');
+    setCompleted(id);
+  }
+
   /* View */
   return (
     <>
@@ -48,11 +54,11 @@ function Todos({todos, addTodo}) {
 
         <Header/>
 
-        <Input onSubmit={submitTodo} onChange={handleChange} value={todo} />
+        <Input handleSubmit={submitTodo} handleChange={handleChange} handleCompleted={handleCompleted} todo={todo} />
 
         <div className="todoListContainer">
 
-          <TodoList todos={todos}/>
+          <TodoList todos={todos} handleCompleted={handleCompleted}/>
 
           <div className="todoInfo">
             <p className="itemsLeft">{todos.length} items left</p>
