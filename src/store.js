@@ -26,6 +26,19 @@ const todoReducer = (state = defaultState, action = {}) => {
                     {...item, status: "completed"}
                 ],
             }
+        case 'CLEAR_COMPLETED':
+            /* Return object with all items not completed */
+            return {
+                ...state,
+                todos: [...state.todos.filter(todo => todo.status !== "completed")]
+            }
+
+        case 'DELETE_TODO':
+            /* Return state without deleted item */
+            return {
+                ...state,
+                todos: [...state.todos.filter(todo => todo.id !== action.payload)]
+            }
 
         default:
             return state;

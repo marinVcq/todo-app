@@ -11,7 +11,7 @@ import TodoList from './TodoList';
 
 
 
-function Todos({todos, addTodo, setCompleted}) {
+function Todos({todos, addTodo, setCompleted, clearCompleted, deleteTodo}) {
 
   /* State */
   const [todo, setTodo] = useState('');
@@ -39,10 +39,18 @@ function Todos({todos, addTodo, setCompleted}) {
     setTodo('');
   }
 
+  /* Set todo completed - function */
   const handleCompleted = (id,e) => {
     e.preventDefault();
     console.log('set completed !');
     setCompleted(id);
+  }
+
+  /* Delete a todo - function */
+  const handleDelete = (id,event) => {
+    event.preventDefault();
+    console.log('try to delete ');
+    deleteTodo(id);
   }
 
   /* View */
@@ -58,11 +66,11 @@ function Todos({todos, addTodo, setCompleted}) {
 
         <div className="todoListContainer">
 
-          <TodoList todos={todos} handleCompleted={handleCompleted}/>
+          <TodoList todos={todos} handleCompleted={handleCompleted} handleDelete={handleDelete}/>
 
           <div className="todoInfo">
             <p className="itemsLeft">{todos.length} items left</p>
-            <button>Clear completed</button>
+            <button onClick={clearCompleted}>Clear completed</button>
           </div>
         </div>
 

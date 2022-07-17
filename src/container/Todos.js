@@ -16,6 +16,13 @@ const mapDispatchToProps = dispatch => {
 		setCompleted: value => dispatch({
 			type: 'SET_COMPLETED',
 			payload: value
+		}),
+		clearCompleted: () => dispatch({
+			type: 'CLEAR_COMPLETED',
+		}),
+		deleteTodo: value => dispatch({
+			type: 'DELETE_TODO',
+			payload: value
 		})
 	};
 };
