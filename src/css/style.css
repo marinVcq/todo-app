@@ -152,7 +152,8 @@ body {
     font-size: 1.3rem;
     font-family: "Josefin Sans";
     border: none;
-    background: transparent; }
+    background: transparent;
+    cursor: pointer; }
 
 .todoList {
   width: 100%; }
