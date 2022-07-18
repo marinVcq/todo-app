@@ -1,17 +1,18 @@
 import React from 'react';
-import Todos from './container/Todos'
+
+/* Container */
+import Todos from './container/Todos';
 
 /* Theme and style */
-import {light,dark} from "./abstract/theme.js";
 import styled, {ThemeProvider} from "styled-components/macro";
+import {light,dark} from "./abstract/theme.js";
 
 
-function App() {
-
+function App({darkThemeEnabled, toggleTheme}) {
   return (
-    <ThemeProvider theme={light}>
-      <AppDiv className="app">
-        <Todos/>
+    <ThemeProvider theme={darkThemeEnabled === true ? dark  : light}>
+      <AppDiv className="app" >
+          <Todos darkThemeEnabled={darkThemeEnabled} toggleTheme={toggleTheme}/>
       </AppDiv>
     </ThemeProvider>
   );

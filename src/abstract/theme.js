@@ -3,18 +3,21 @@ import { COLORS } from './colors.js';
 
 export const light = {
 	mainBackground: COLORS.veryLightGray,
-	todoContainerBackground: COLORS.veryLightGrayishBlue,
+	todoContainerBackground: "white",
+	todoContainerShadow: COLORS.lightGrayishBlue,
+	textSoft: COLORS.veryLightGrayishBlue,
+	text: COLORS.veryDarkGrayishBlue,
+	textCompleted: COLORS.lightGrayishBlue1,
+	buttonCompleted: COLORS.veryLightGrayishBlue,
+	mobileBackground: "../assets/images/bg-mobile-light.jpg"
+};
+
+export const dark = {
+	mainBackground: COLORS.veryDarkBlue,
+	todoContainerBackground: COLORS.veryDarkDesaturatedBlue,
 	todoContainerShadow: COLORS.lightGrayishBlue,
 	textSoft: COLORS.veryLightGrayishBlue,
 	text: COLORS.veryDarkGrayishBlue,
 	textCompleted: COLORS.lightGrayishBlue1,
 	buttonCompleted: COLORS.veryLightGrayishBlue
-};
-
-export const dark = {
-	mainBackground: COLORS.veryLightGray,
-	todoContainerBackground: COLORS.veryDarkGrayishBlue2,
-	todoContainerShadow: COLORS.veryDarkBlue,
-	textSoft: COLORS.darkGrayishBlue,
-	text: COLORS.veryDarkGrayishBlue,
 };

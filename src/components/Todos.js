@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react';
+import React,{ useState } from 'react';
 
 /* Components */
 import Wrapper from './Wrapper';
@@ -7,11 +7,11 @@ import Header from './Header';
 import Input from './Input';
 import TodoList from './TodoList';
 
+/* Style */
+import styled, {ThemeProvider} from "styled-components";
 
+function Todos({todos, addTodo, setCompleted, clearCompleted, deleteTodo, toggleTheme, darkThemeEnabled, filter, setFilter}) {
 
-
-
-function Todos({todos, addTodo, setCompleted, clearCompleted, deleteTodo}) {
 
   /* State */
   const [todo, setTodo] = useState('');
@@ -60,24 +60,24 @@ function Todos({todos, addTodo, setCompleted, clearCompleted, deleteTodo}) {
 
       <Wrapper>
 
-        <Header/>
+        <Header toggleTheme={toggleTheme}/>
 
         <Input handleSubmit={submitTodo} handleChange={handleChange} handleCompleted={handleCompleted} todo={todo} />
 
-        <div className="todoListContainer">
+        <ListContainerDiv className="todoListContainer">
 
-          <TodoList todos={todos} handleCompleted={handleCompleted} handleDelete={handleDelete}/>
+          <TodoList todos={todos} handleCompleted={handleCompleted} handleDelete={handleDelete} filter={filter}/>
 
           <div className="todoInfo">
             <p className="itemsLeft">{todos.length} items left</p>
             <button onClick={clearCompleted}>Clear completed</button>
           </div>
-        </div>
+        </ListContainerDiv>
 
         <div className="filterPanel">
-          <button>All</button>
-          <button>Active</button>
-          <button>Completed</button>
+          <FilterButton className={filter === "all" ? "active" : ""} onClick={() => setFilter('all')}>All</FilterButton>
+          <FilterButton className={filter === "active" ? "active" : ""} onClick={() => setFilter('active')}>Active</FilterButton>
+          <FilterButton className={filter === "completed" ? "active" : ""} onClick={() => setFilter('completed')}>Completed</FilterButton>
         </div>
 
 
@@ -85,5 +85,12 @@ function Todos({todos, addTodo, setCompleted, clearCompleted, deleteTodo}) {
     </>
   );
 }
+
+const ListContainerDiv = styled.div`
+  background-color: ${(props) => props.theme.todoContainerBackground};
+`
+const FilterButton = styled.button`
+
+`
 
 export default Todos;

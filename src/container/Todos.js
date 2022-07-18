@@ -3,7 +3,8 @@ import Todos from '../components/Todos';
 
 const mapStateToProps = state => {
 	return {
-		todos: state.todos
+		todos: state.todos.todos,
+		filter: state.todos.filter
 	};
 };
 
@@ -22,6 +23,10 @@ const mapDispatchToProps = dispatch => {
 		}),
 		deleteTodo: value => dispatch({
 			type: 'DELETE_TODO',
+			payload: value
+		}),
+		setFilter: value => dispatch({
+			type: 'SET_FILTER',
 			payload: value
 		})
 	};
