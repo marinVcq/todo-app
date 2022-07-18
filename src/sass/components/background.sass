@@ -1,0 +1,14 @@
+.image-background
+	@include set-position(absolute,0,0)
+	@include width-height(100vw, 20rem)
+	background-image: url("../assets/images/bg-mobile-light.jpg")
+	background-position: center
+	background-size: cover
+
+/* Media Query */
+
+@include respond(desktop)
+	.image-background
+		height: 30rem
+
+	
