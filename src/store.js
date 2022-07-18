@@ -1,10 +1,30 @@
-import {createStore} from 'redux';
+import {createStore, combineReducers} from 'redux';
+import {light,dark} from "./abstract/theme.js";
 
-const defaultState = {
+
+const todosDefaultState = {
 	todos: [],
+    filter: 'all',
 };
 
-const todoReducer = (state = defaultState, action = {}) => {
+const themeDefaultState = {
+    darkThemeEnabled: false,
+};
+
+const themeReducer = (state = themeDefaultState , action = {}) => {
+    switch (action.type) {
+        case 'TOGGLE_THEME':
+            return {
+                ...state,
+                darkThemeEnabled: !state.darkThemeEnabled
+            };
+
+        default:
+            return state;
+    }
+};
+
+const todoReducer = (state = todosDefaultState, action = {}) => {
     switch (action.type) {
         case 'ADD_TODO':
             return {
@@ -39,12 +59,22 @@ const todoReducer = (state = defaultState, action = {}) => {
                 ...state,
                 todos: [...state.todos.filter(todo => todo.id !== action.payload)]
             }
+        case 'SET_FILTER':
+            return{
+                ...state,
+                filter: action.payload
+            }
 
         default:
             return state;
     }
 };
 
-const store = createStore(todoReducer);
+const rootReducer = combineReducers({
+    todos: todoReducer,
+    theme: themeReducer,
+});
+
+const store = createStore(rootReducer);
 
 export default store;
