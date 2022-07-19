@@ -37,14 +37,184 @@ body {
   bottom: 0;
   width: 100vw;
   height: 20rem;
-  background-image: url("../assets/images/bg-mobile-light.jpg");
   background-position: center;
   background-size: cover; }
+
+.light {
+  background-image: url("../assets/images/bg-mobile-light.jpg"); }
+
+.dark {
+  background-image: url("../assets/images/bg-mobile-dark.jpg"); }
 
 /* Media Query */
 @media only screen and (min-width: 600px) {
   .image-background {
-    height: 30rem; } }
+    height: 30rem; }
+
+  .light {
+    background-image: url("../assets/images/bg-desktop-light.jpg"); }
+
+  .dark {
+    background-image: url("../assets/images/bg-desktop-dark.jpg"); } }
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 4.8rem 0 4rem 0; }
+  .header .app-title {
+    text-transform: uppercase;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.36em;
+    font-size: 2.8rem; }
+  .header button {
+    width: 2.4rem;
+    height: 2.4rem;
+    background-position: center;
+    background-size: cover; }
+  .header .toggle-light {
+    background-image: url("../assets/images/icon-moon.svg"); }
+  .header .toggle-dark {
+    background-image: url("../assets/images/icon-sun.svg"); }
+
+/* Media Queries */
+@media only screen and (min-width: 600px) {
+  .header {
+    margin: 7.7rem 0 5rem 0; }
+    .header .app-title {
+      letter-spacing: 0.415em;
+      font-size: 4rem; }
+    .header button {
+      width: 2.7rem;
+      height: 2.7rem; } }
+.input-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.6rem;
+  min-height: 4.8rem;
+  padding-left: 2rem; }
+  .input-form input {
+    font-family: "Josefin Sans";
+    border: none;
+    font-size: 1.3rem;
+    flex-grow: 1;
+    min-height: 4.8rem; }
+    .input-form input:focus {
+      outline: none; }
+
+/* Media queries */
+@media only screen and (min-width: 600px) {
+  .input-form {
+    min-height: 6.4rem; }
+    .input-form input {
+      min-height: 6.4rem;
+      font-size: 1.9rem; } }
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  min-height: 5rem;
+  padding: 0 2rem 0 2rem;
+  border-bottom: 0.1rem solid #d2d3db; }
+  .todo-item .todo-content {
+    max-width: 24.1rem;
+    text-align: start;
+    font-size: 1.3rem;
+    font-weight: regular;
+    overflow-wrap: break-word;
+    cursor: pointer; }
+    .todo-item .todo-content:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 50%;
+      border-bottom: 0.1rem solid #d2d3db; }
+  .todo-item .remove-todo-btn {
+    position: absolute;
+    top: 50%;
+    left: 100;
+    right: 0;
+    bottom: 0;
+    transform: translateY(-50%);
+    margin-right: 2rem;
+    width: 1.4rem;
+    height: 1.4rem;
+    background-image: url("../assets/images/icon-cross.svg");
+    background-position: center;
+    background-size: cover; }
+
+.round-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  border: 0.1rem solid black;
+  margin-right: 1.2rem; }
+
+.completed {
+  background: linear-gradient(135deg, #57ddff, #c058f3);
+  border: none; }
+  .completed .icon-check {
+    width: 1rem;
+    height: 1rem;
+    background-image: url("../assets/images/icon-check.svg");
+    background-position: center;
+    background-repeat: no-repeat; }
+
+/* Media Queries */
+@media only screen and (min-width: 600px) {
+  .todo-item {
+    min-height: 6.4rem;
+    padding: 0 2.4rem 0 2.4rem; }
+    .todo-item .todo-content {
+      font-size: 1.9rem;
+      max-width: 41rem; }
+    .todo-item .remove-todo-btn {
+      width: 1.8rem;
+      height: 1.8rem;
+      margin-right: 2.4rem;
+      display: none; }
+    .todo-item:hover .remove-todo-btn {
+      display: block; }
+    .todo-item:hover .round-btn {
+      background: linear-gradient(135deg, #57ddff, #c058f3);
+      border: none; }
+      .todo-item:hover .round-btn:after {
+        display: block; }
+    .todo-item:hover .completed:after {
+      display: none; }
+
+  .round-btn {
+    width: 2.6rem;
+    height: 2.6rem;
+    margin-right: 2.4rem; }
+    .round-btn:after {
+      display: none;
+      content: "";
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%; } }
+button {
+  font-family: "Josefin Sans";
+  border: none;
+  background: transparent;
+  cursor: pointer; }
+
 .app {
   width: 100vw;
   min-height: 100vh;
@@ -57,29 +227,6 @@ body {
   justify-content: flex-start;
   align-items: center; }
 
-.header {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin: 4.8rem 0 4rem 0; }
-  .header h1 {
-    text-transform: uppercase;
-    color: white;
-    font-weight: 700;
-    letter-spacing: 0.36em;
-    font-size: 2.8rem; }
-  .header button {
-    border: none;
-    width: 2.4rem;
-    height: 2.4rem;
-    background: transparent;
-    background-image: url("../assets/images/icon-moon.svg");
-    background-position: center;
-    background-size: cover;
-    cursor: pointer; }
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -88,48 +235,10 @@ body {
   width: 32.7rem;
   height: 100%; }
 
-.input {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  border-radius: 0.6rem;
-  min-height: 4.8rem;
-  padding-left: 2rem; }
-  .input input {
-    font-family: "Josefin Sans";
-    border: none;
-    font-size: 1.3rem;
-    flex-grow: 1;
-    min-height: 4.8rem; }
-    .input input:focus {
-      outline: none; }
-
-.round-btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 2rem;
-  height: 2rem;
-  border: 0.1rem solid black;
-  margin-right: 1.2rem;
-  cursor: pointer;
-  background: transparent; }
-
-.completed {
-  background: linear-gradient(135deg, #57ddff, #c058f3); }
-  .completed .icon-check {
-    width: 1rem;
-    height: 1rem;
-    background-image: url("../assets/images/icon-check.svg");
-    background-position: center;
-    background-repeat: no-repeat; }
-
+@media only screen and (min-width: 600px) {
+  .wrapper {
+    width: 54rem;
+    height: 100%; } }
 .todoListContainer {
   display: flex;
   flex-direction: column;
@@ -163,47 +272,6 @@ body {
 
 .todoList {
   width: 100%; }
-
-.todoItem {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  width: 100%;
-  min-height: 5rem;
-  padding: 0 2rem 0 2rem;
-  border-bottom: 0.1rem solid #d2d3db; }
-  .todoItem p {
-    max-width: 24.1rem;
-    text-align: start;
-    font-size: 1.3rem;
-    font-weight: regular;
-    overflow-wrap: break-word; }
-    .todoItem p:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100%;
-      height: 50%;
-      border-bottom: 0.1rem solid #d2d3db; }
-  .todoItem .remove-todo-btn {
-    position: absolute;
-    top: 50%;
-    left: 100;
-    right: 0;
-    bottom: 0;
-    transform: translateY(-50%);
-    margin-right: 2rem;
-    width: 1.4rem;
-    height: 1.4rem;
-    background-image: url("../assets/images/icon-cross.svg");
-    background-position: center;
-    background-size: cover;
-    border: none;
-    background-color: transparent; }
 
 .filterPanel {
   width: 100%;

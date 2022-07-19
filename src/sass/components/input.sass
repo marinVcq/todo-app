@@ -1,0 +1,26 @@
+.input-form
+	@include flexbox(row, flex-start, center)
+	@include width-height(100%,100%)
+	border-radius: 0.6rem
+	min-height: 4.8rem
+	padding-left: 2rem
+
+	input
+		font-family: 'Josefin Sans'
+		border: none
+		font-size: 1.3rem
+		flex-grow: 1
+		min-height: 4.8rem
+
+		&:focus
+			outline: none
+
+/* Media queries */
+
+@include respond(desktop)
+	.input-form
+		min-height: 6.4rem
+
+		input
+			min-height: 6.4rem
+			font-size: 1.9rem

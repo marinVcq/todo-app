@@ -4,13 +4,13 @@ import styled, {ThemeProvider} from "styled-components/macro";
 function Todo({todo, handleCompleted, handleDelete}) {
 
   return (
-  	<div className="todoItem">
+  	<div className="todo-item">
   		
   		<CompletedButtonDiv todo={todo} className={todo.status === "completed" ? "round-btn completed" : "round-btn"} onClick={(event) => handleCompleted(todo.id,event)}>
   			<div className="icon-check"></div>
   		</CompletedButtonDiv>
   		
-  		<TodoP todo={todo} >{todo.status + ' ' + todo.content}</TodoP>
+  		<TodoP todo={todo} className="todo-content" >{todo.status + ' ' + todo.content}</TodoP>
 
   		<button className="remove-todo-btn" onClick={(event) => handleDelete(todo.id,event)}></button>
   	</div>)
@@ -25,6 +25,10 @@ const TodoP = styled.p`
 
 const CompletedButtonDiv = styled.button`
   	border-color: ${(props) => props.theme.buttonCompleted};
+
+  	&:after{
+  		background-color: ${(props) => props.theme.todoContainerBackground};
+  	}
 `
 
 export default Todo;

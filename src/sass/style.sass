@@ -2,19 +2,17 @@
 @import './base/__base.sass'
 
 /* Components */
+@import './components/background.sass'
+@import './components/header.sass'
+@import './components/input.sass'
+@import './components/todo.sass'
 
-.image-background
-	@include set-position(absolute,0,0)
-	@include width-height(100vw, 20rem)
-	background-image: url("../assets/images/bg-mobile-light.jpg")
-	background-position: center
-	background-size: cover
 
-/* Media Query */
-
-@include respond(desktop)
-	.image-background
-		height: 30rem
+button
+	font-family: 'Josefin Sans'
+	border: none
+	background: transparent
+	cursor: pointer
 
 .app
 	width: 100vw
@@ -25,68 +23,13 @@
 	font-size: 1.8rem
 	@include flexbox(column, flex-start, center)
 
-.header
-	width: 100%
-	@include flexbox(row, space-between, flex-start)
-	margin: 4.8rem 0 4rem 0
-
-	h1
-		text-transform: uppercase
-		color: white 
-		font-weight: 700
-		letter-spacing: 0.36em
-		font-size: 2.8rem
-
-	button
-		border: none
-		@include width-height(2.4rem,2.4rem)
-		background: transparent
-		background-image: url('../assets/images/icon-moon.svg')
-		background-position: center
-		background-size: cover
-		cursor: pointer
-
 .wrapper
 	@include flexbox(column, flex-start, center)
 	@include width-height(32.7rem, 100%)
 
-.input
-	@include flexbox(row, flex-start, center)
-	width: 100%
-	height: 100%
-	background-color: white 
-	border-radius: 0.6rem
-	min-height: 4.8rem
-	padding-left: 2rem
-
-	input
-		font-family: 'Josefin Sans'
-		border: none
-		font-size: 1.3rem
-		flex-grow: 1
-		min-height: 4.8rem
-
-		&:focus
-			outline: none
-
-.round-btn
-	@include flexbox(row,center,center)
-	border-radius: 50%
-	@include width-height(2rem,2rem)
-	border: 0.1rem solid black
-	margin-right: 1.2rem
-	cursor: pointer
-	background: transparent
-
-.completed
-	background: linear-gradient(135deg, hsl(192, 100%, 67%),hsl(280, 87%, 65%))
-
-	.icon-check
-		@include width-height(1rem,1rem)
-		background-image: url('../assets/images/icon-check.svg')
-		background-position: center
-		background-repeat: no-repeat
-
+@include respond(desktop)
+	.wrapper
+		@include width-height(54rem, 100%)
 
 .todoListContainer
 	@include flexbox(column, space-between, center)
@@ -116,37 +59,6 @@
 
 .todoList
 	width: 100%
-
-.todoItem
-	@include flexbox(row, flex-start, center)
-	width: 100%
-	min-height: 5rem
-	padding: 0 2rem 0 2rem
-	border-bottom: 0.1rem solid hsl(233, 11%, 84%)
-	p 
-		max-width: 24.1rem
-		text-align: start
-		font-size: 1.3rem
-		font-weight: regular
-		overflow-wrap: break-word
-
-		&:after
-			content: ""
-			@include set-position(absolute,0,0)
-			@include width-height(100%,50%)
-			border-bottom: 0.1rem solid hsl(233, 11%, 84%)
-
-	.remove-todo-btn
-		@include set-position(absolute, 50%,100)
-		transform: translateY(-50%)
-		margin-right: 2rem
-		@include width-height(1.4rem, 1.4rem)
-		background-image: url('../assets/images/icon-cross.svg')
-		background-position: center
-		background-size: cover
-		border: none
-		background-color: transparent
-
 
 .filterPanel
 	@include width-height(100%, 4.8rem)

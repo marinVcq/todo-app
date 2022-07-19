@@ -12,7 +12,6 @@ import styled, {ThemeProvider} from "styled-components";
 
 function Todos({todos, addTodo, setCompleted, clearCompleted, deleteTodo, toggleTheme, darkThemeEnabled, filter, setFilter}) {
 
-
   /* State */
   const [todo, setTodo] = useState('');
 
@@ -56,13 +55,13 @@ function Todos({todos, addTodo, setCompleted, clearCompleted, deleteTodo, toggle
   /* View */
   return (
     <>
-      <Background />
+      <Background darkThemeEnabled={darkThemeEnabled}/>
 
       <Wrapper>
 
-        <Header toggleTheme={toggleTheme}/>
+        <Header toggleTheme={toggleTheme} darkThemeEnabled={darkThemeEnabled}/>
 
-        <Input handleSubmit={submitTodo} handleChange={handleChange} handleCompleted={handleCompleted} todo={todo} />
+        <Input handleSubmit={submitTodo} handleChange={handleChange} handleCompleted={handleCompleted} todo={todo}/>
 
         <ListContainerDiv className="todoListContainer">
 

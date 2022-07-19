@@ -1,14 +1,25 @@
 .image-background
 	@include set-position(absolute,0,0)
 	@include width-height(100vw, 20rem)
-	background-image: url("../assets/images/bg-mobile-light.jpg")
 	background-position: center
 	background-size: cover
+
+.light
+	background-image: url("../assets/images/bg-mobile-light.jpg")
+
+.dark
+	background-image: url("../assets/images/bg-mobile-dark.jpg")
 
 /* Media Query */
 
 @include respond(desktop)
 	.image-background
 		height: 30rem
+
+	.light
+		background-image: url("../assets/images/bg-desktop-light.jpg")
+
+	.dark
+		background-image: url("../assets/images/bg-desktop-dark.jpg")
 
 	

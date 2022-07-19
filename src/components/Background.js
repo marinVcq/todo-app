@@ -1,13 +1,9 @@
 import React from 'react';
-import styled, {ThemeProvider} from 'styled-components/macro';
 
-function Background() {
+function Background({darkThemeEnabled}) {
 	return (
-			<BackgroundImageDiv className="image-background"></BackgroundImageDiv>
+			<div className={darkThemeEnabled === true ? "image-background dark" : "image-background light" }></div>
 	);
 };
 
-const BackgroundImageDiv = styled.div`
-
-`
 export default Background;

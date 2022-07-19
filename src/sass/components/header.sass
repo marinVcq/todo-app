@@ -1,0 +1,39 @@
+.header
+	width: 100%
+	@include flexbox(row, space-between, flex-start)
+	margin: 4.8rem 0 4rem 0
+
+	.app-title
+		text-transform: uppercase
+		color: white 
+		font-weight: 700
+		letter-spacing: 0.36em
+		font-size: 2.8rem
+
+	button
+		@include width-height(2.4rem,2.4rem)
+		background-position: center
+		background-size: cover
+
+	.toggle-light
+		background-image: url('../assets/images/icon-moon.svg')
+
+	.toggle-dark
+		background-image: url('../assets/images/icon-sun.svg')
+
+
+
+
+/* Media Queries */
+
+@include respond(desktop)
+	.header
+		margin: 7.7rem 0 5rem 0
+
+		.app-title
+			letter-spacing: 0.415em
+			font-size: 4rem
+
+		button
+			@include width-height(2.7rem,2.7rem)
+

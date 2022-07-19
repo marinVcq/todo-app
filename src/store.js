@@ -14,6 +14,7 @@ const themeDefaultState = {
 const themeReducer = (state = themeDefaultState , action = {}) => {
     switch (action.type) {
         case 'TOGGLE_THEME':
+            console.log(state.darkThemeEnabled)
             return {
                 ...state,
                 darkThemeEnabled: !state.darkThemeEnabled
