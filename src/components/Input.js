@@ -11,7 +11,7 @@ function Input({handleSubmit, todo, handleChange, handleCompleted}) {
 };
 
 const SubButtonDiv = styled.button`
-  border-color: ${(props) => props.theme.textSoft};
+  border-color: ${(props) => props.theme.textCompleted};
 `
 const FormDiv = styled.form`
   background-color: ${(props) => props.theme.todoContainerBackground};
@@ -19,6 +19,12 @@ const FormDiv = styled.form`
 const InputDiv = styled.input`
   background-color: ${(props) => props.theme.todoContainerBackground};
 	color: ${(props) => props.theme.textSoft};
+
+	&::placeholder{
+		color: ${(props) => props.theme.textSoft};
+
+	}
+
 	&:focus {
 		color: ${(props) => props.theme.text};
 		font-weight: bold;

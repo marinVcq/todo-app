@@ -2,6 +2,7 @@ export const COLORS = {
 
 	/* Primary */
 	brightBlue: 'hsl(220, 98%, 61%)',
+	white: 'hsl(0, 0%, 100%)',
 
 	/* Light theme */
 	veryLightGray: 'hsl(0, 0%, 98%)',

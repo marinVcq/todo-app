@@ -1,0 +1,7 @@
+.wrapper
+	@include flexbox(column, flex-start, center)
+	@include width-height(32.7rem, 100%)
+
+@include respond(desktop)
+	.wrapper
+		@include width-height(54rem, 100%)

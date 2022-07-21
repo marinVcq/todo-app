@@ -63,22 +63,23 @@ function Todos({todos, addTodo, setCompleted, clearCompleted, deleteTodo, toggle
 
         <Input handleSubmit={submitTodo} handleChange={handleChange} handleCompleted={handleCompleted} todo={todo}/>
 
-        <ListContainerDiv className="todoListContainer">
+        <ListContainerDiv className="todo-container">
 
           <TodoList todos={todos} handleCompleted={handleCompleted} handleDelete={handleDelete} filter={filter}/>
 
-          <div className="todoInfo">
-            <p className="itemsLeft">{todos.length} items left</p>
+          <div className="todo-info">
+            <p className="items-left">{todos.length} items left</p>
             <button onClick={clearCompleted}>Clear completed</button>
           </div>
         </ListContainerDiv>
 
-        <div className="filterPanel">
+        <FilterPanelDiv className="filter-panel">
           <FilterButton className={filter === "all" ? "active" : ""} onClick={() => setFilter('all')}>All</FilterButton>
           <FilterButton className={filter === "active" ? "active" : ""} onClick={() => setFilter('active')}>Active</FilterButton>
           <FilterButton className={filter === "completed" ? "active" : ""} onClick={() => setFilter('completed')}>Completed</FilterButton>
-        </div>
+        </FilterPanelDiv>
 
+        <SubTextDiv className="sub-text"><p>Drag and drop to reorder list</p></SubTextDiv>
 
       </Wrapper>
     </>
@@ -87,9 +88,21 @@ function Todos({todos, addTodo, setCompleted, clearCompleted, deleteTodo, toggle
 
 const ListContainerDiv = styled.div`
   background-color: ${(props) => props.theme.todoContainerBackground};
+  box-shadow: 0px 25px 35px 0px ${(props) => props.theme.todoContainerShadow};
+
+`
+const FilterPanelDiv = styled.div`
+  background-color: ${(props) => props.theme.todoContainerBackground};
 `
 const FilterButton = styled.button`
+  color: ${(props) => props.theme.textSoft};
+  &:hover{
+    color: ${(props) => props.theme.textHover};
+  }
+`
 
+const SubTextDiv = styled.div`
+  color: ${(props) => props.theme.textSoft};
 `
 
 export default Todos;

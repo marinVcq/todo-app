@@ -1,0 +1,20 @@
+.todo-info
+	@include width-height(100%, 5rem)
+	@include flexbox(row, space-between, center)
+	padding: 0 2rem 0 2rem
+
+	.items-left
+		color: hsl(236, 9%, 61%)
+		font-size: 1.3rem
+
+	button
+		color: hsl(236, 9%, 61%)
+		font-size: 1.3rem
+
+@include respond(desktop)
+	.todo-info
+		padding: 0 2.4rem 0 2.4rem
+		.items-left
+			font-size: 1.5rem
+		button 
+			font-size: 1.5rem

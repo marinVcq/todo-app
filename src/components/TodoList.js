@@ -5,7 +5,7 @@ function TodoList({todos, handleCompleted, handleDelete,filter}) {
 
   if(filter === 'all'){
     return (
-        <ol className="todoList">
+        <ol className="todo-list">
           {todos.map(todo => {
             return <Todo todo={todo} handleCompleted={handleCompleted} key={todo.id} handleDelete={handleDelete} filter={filter}/>
           })}
@@ -13,7 +13,7 @@ function TodoList({todos, handleCompleted, handleDelete,filter}) {
     );    
   }else if(filter === 'active'){
     return (
-        <ol className="todoList">
+        <ol className="todo-list">
           {todos.filter(todo => todo.status === "active").map(todo => {
             return <Todo todo={todo} handleCompleted={handleCompleted} key={todo.id} handleDelete={handleDelete} filter={filter}/>
           })}
@@ -21,7 +21,7 @@ function TodoList({todos, handleCompleted, handleDelete,filter}) {
     );    
   }else{
     return (
-        <ol className="todoList">
+        <ol className="todo-list">
           {todos.filter(todo => todo.status === "completed").map(todo => {
             return <Todo todo={todo} handleCompleted={handleCompleted} key={todo.id} handleDelete={handleDelete} filter={filter}/>
           })}

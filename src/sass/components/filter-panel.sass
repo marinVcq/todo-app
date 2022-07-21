@@ -1,0 +1,23 @@
+.filter-panel
+	@include width-height(100%, 4.8rem)
+	@include flexbox(row, space-between,center)
+	border-radius: 0.6rem
+	margin-top: 1.6rem
+	padding: 0 8rem 0 8rem
+
+	button 
+		font-weight: bold
+
+	.active
+		color: hsl(220, 98%, 61%)
+
+@include respond(desktop)
+	.filter-panel
+		@include width-height(16.7rem, 5rem)
+		@include set-position(relative, -5rem,0)
+		padding: 0
+		margin: 0
+		background: transparent
+
+		button 
+			font-size: 1.6rem

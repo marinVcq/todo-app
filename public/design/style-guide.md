@@ -22,7 +22,7 @@ The designs were created to the following widths:
 - Very Light Grayish Blue: hsl(236, 33%, 92%)	(todolsit container shadow)
 - Light Grayish Blue: hsl(233, 11%, 84%)		(text completed)
 - Dark Grayish Blue: hsl(236, 9%, 61%)			(text-Soft)
-- Very Dark Grayish Blue: hsl(235, 19%, 35%)	(text)
+- Very Dark Grayish Blue: hsl(235, 19%, 35%)	(text and hover text)
 
 ### Dark Theme
 
